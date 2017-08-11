@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "CallIT";
+    var machineName = ViewBag.machineName;
+    var machineIP = ViewBag.machineIP;
+}
+@*<h2>CallIT คอไอที(เรียกมัน)</h2>*@
+
+<div class="container">
+    <div class="row">
+        <h1>ชื่อเครื่องคอมพิวเตอร์ @machineName</h1>
+        <h1>เลข IP เครื่อง @machineIP</h1>
+    </div>
+
+    <div class="col-md-6">
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">แจ้งปัญหา</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">ชื่อผู้แจ้ง</label>
+                <input type="text" class="form-control" id="sendName">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">เบอร์โทรติดต่อกลับ</label>
+                <input type="text" class="form-control" id="sendTel">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">ชื่อเครื่องที่แจ้ง</label>
+                <input type="text" class="form-control" id="machinName" readonly="readonly" value="@machineName">
+                <p></p>
+                <input type="text" class="form-control" id="machinIP" readonly="readonly" value="@machineIP">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Send</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <!-- Carousel
+            ================================================== -->
+            <div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <a href="#"><img class="thumbnail" src="http://placehold.it/600x400/" alt="Slide1"></a>
+                        <div class="caption">
+                            <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h4>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img class="thumbnail" src="http://placehold.it/600x400/" alt="Slide2"></a>
+                        <div class="caption">
+                            <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h4>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img class="thumbnail" src="http://placehold.it/600x400/" alt="Slide3"></a>
+                        <div class="caption">
+                            <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h4>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+            </div><!-- End Carousel -->
+        </div>
+    </div>
+
+</div>
+
+
