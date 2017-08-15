@@ -14,10 +14,16 @@ namespace CallIT.Web.Controllers
             //ViewBag.machineName = Environment.MachineName;
             ViewBag.machineName = Dns.GetHostName();
             IPAddress[] addresses = Dns.GetHostAddresses(Dns.GetHostName()).Where(a => a.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToArray();
-            ViewBag.machineIP = addresses[0].ToString();
+            string strAddress = "";
+            foreach (var i in addresses)
+            {
+                strAddress += i.ToString();
+            }
+            //ViewBag.machineIP = addresses[0].ToString();
+            ViewBag.machineIP = strAddress;
             return View();
         }
 
-      
+
     }
 }
