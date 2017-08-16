@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CallIT.Web.BusinessLogic;
+using CallIT.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -21,6 +23,28 @@ namespace CallIT.Web.Controllers
             }
             //ViewBag.machineIP = addresses[0].ToString();
             ViewBag.machineIP = strAddress;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(callModel model)
+        {
+            ViewBag.machineName = Dns.GetHostName();
+            IPAddress[] addresses = Dns.GetHostAddresses(Dns.GetHostName()).Where(a => a.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToArray();
+            string strAddress = "";
+            foreach (var i in addresses)
+            {
+                strAddress += i.ToString();
+            }
+            //ViewBag.machineIP = addresses[0].ToString();
+            ViewBag.machineIP = strAddress;
+
+            model.sendDatetime = DateTime.Now;
+
+            new CallITBL().Save(model);
+
+            callModel model1 = new callModel();
+
             return View();
         }
 

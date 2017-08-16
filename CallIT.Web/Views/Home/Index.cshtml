@@ -12,31 +12,32 @@
     </div>
 
     <div class="col-md-6">
-        <form>
+        @using (Html.BeginForm(null, null, FormMethod.Post))
+        {
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">แจ้งปัญหา</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="sendText" rows="3"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">ชื่อผู้แจ้ง</label>
-                <input type="text" class="form-control" id="sendName">
+                <input type="text" class="form-control" id="sendName" name="sendName">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">เบอร์โทรติดต่อกลับ</label>
-                <input type="text" class="form-control" id="sendTel">
+                <input type="text" class="form-control" id="sendTel" name="sendTel">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">ชื่อเครื่องที่แจ้ง</label>
-                <input type="text" class="form-control" id="machinName" readonly="readonly" value="@machineName">
+                <input type="text" class="form-control" id="machinName" readonly="readonly" value="@machineName" name="machineName">
                 <p></p>
-                <input type="text" class="form-control" id="machinIP" readonly="readonly" value="@machineIP">
+                <input type="text" class="form-control" id="machinIP" readonly="readonly" value="@machineIP" name="machineIP">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Send</button>
                 <button type="reset" class="btn btn-secondary">Reset</button>
             </div>
-        </form>
+        }
     </div>
 
     <div class="col-md-6">
