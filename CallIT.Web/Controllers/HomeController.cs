@@ -19,10 +19,14 @@ namespace CallIT.Web.Controllers
             string strAddress = "";
             foreach (var i in addresses)
             {
-                strAddress += i.ToString();
+                strAddress += i.ToString()+",";
             }
             //ViewBag.machineIP = addresses[0].ToString();
             ViewBag.machineIP = strAddress;
+
+            //new CallITBL().testConnect();
+            ViewBag.Message = new MessageResult();
+
             return View();
         }
 
@@ -41,7 +45,7 @@ namespace CallIT.Web.Controllers
 
             model.sendDatetime = DateTime.Now;
 
-            new CallITBL().Save(model);
+            ViewBag.Message = new CallITBL().Save(model);
 
             callModel model1 = new callModel();
 

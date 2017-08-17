@@ -2,6 +2,7 @@
     ViewBag.Title = "CallIT";
     var machineName = ViewBag.machineName;
     var machineIP = ViewBag.machineIP;
+    var Message = ViewBag.Message;
 }
 @*<h2>CallIT คอไอที(เรียกมัน)</h2>*@
 
@@ -12,6 +13,15 @@
     </div>
 
     <div class="col-md-6">
+        @if (Message.status == "success")
+        {
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Success!</strong> Indicates a successful or positive action.
+            </div>
+
+        }
+
         @using (Html.BeginForm(null, null, FormMethod.Post))
         {
             <div class="form-group">
