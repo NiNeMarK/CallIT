@@ -28,5 +28,6 @@ namespace CallIT.Web.Data
         public virtual DbSet<call> call { get; set; }
         public virtual DbSet<call_staff> call_staff { get; set; }
         public virtual DbSet<staff> staff { get; set; }
+        public virtual DbSet<news> news { get; set; }
     }
 }

@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -174,6 +175,9 @@
     <Compile Include="Data\call_staff.cs">
       <DependentUpon>CallITData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\news.cs">
+      <DependentUpon>CallITData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\staff.cs">
       <DependentUpon>CallITData.tt</DependentUpon>
     </Compile>
@@ -201,6 +205,7 @@
       <LastGenOutput>CallITData.cs</LastGenOutput>
     </Content>
     <Content Include="Data\script.sql" />
+    <Content Include="Data\script_news.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.Entity.Validation;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -83,6 +84,47 @@ namespace CallIT.Web.BusinessLogic
             {
             }
 
+        }
+
+        //public void openExe()
+        //{
+        //    Process p = new Process();
+        //    //p.StartInfo.FileName = "D:\\yourapplication.exe";
+        //    //p.StartInfo.FileName = "D:\\Git\\ConsoleSendMessage\\ConsoleSendMessage\\bin\\Debug\\ConsoleSendMessage.exe 0909399615 สวัสดีครับ";
+        //    string FileName = "D:\\Git\\ConsoleSendMessage\\ConsoleSendMessage\\bin\\Debug\\ConsoleSendMessage.exe";
+        //    var startInfo = new System.Diagnostics.ProcessStartInfo(FileName, "0909399615 สวัสดีครับ");
+        //    p.StartInfo = startInfo;
+        //    p.Start();
+        //}
+
+        public MessageResult GetNewsTop()
+        {
+            MessageResult result = new MessageResult();
+            try
+            {
+                using (CallITEntities db = new CallITEntities())
+                {
+                    
+
+                    result.status = "success";
+                }
+            }
+            catch (DbEntityValidationException exp)
+            {
+                foreach (var entityValidationErrors in exp.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        Console.WriteLine("Property: {0} Error: {1}",
+                          validationError.PropertyName, validationError.ErrorMessage);
+                    }
+
+                }
+
+                result.status = "error";
+            }
+
+            return result;
         }
     }
 }
