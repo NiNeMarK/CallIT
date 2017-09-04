@@ -154,7 +154,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BusinessLogic\CallITBL.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\_BaseController.cs" />
     <Compile Include="Data\call.cs">
       <DependentUpon>CallITData.tt</DependentUpon>
     </Compile>
@@ -262,6 +265,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Staff\" />
+    <Folder Include="Views\_Base\" />
+    <Folder Include="Views\_Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

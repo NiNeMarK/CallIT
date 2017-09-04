@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace CallIT.Web.Controllers
 {
-    public class NewsController : _BaseController
+    public class LoginController : Controller
     {
-        // GET: News
+        // GET: Login
         public ActionResult Index()
         {
             return View();
