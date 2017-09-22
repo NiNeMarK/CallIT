@@ -40,9 +40,12 @@ namespace CallIT.Web.Controllers
             ViewBag.machineName = Dns.GetHostName();
             IPAddress[] addresses = Dns.GetHostAddresses(Dns.GetHostName()).Where(a => a.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToArray();
             string strAddress = "";
+            int j = 1;
             foreach (var i in addresses)
             {
-                strAddress += i.ToString();
+                strAddress += i.ToString() + (j < addresses.Length ? "," : "");
+
+                j++;
             }
             //ViewBag.machineIP = addresses[0].ToString();
             ViewBag.machineIP = strAddress;

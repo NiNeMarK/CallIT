@@ -104,7 +104,7 @@ namespace CallIT.Web.BusinessLogic
             {
                 using (CallITEntities db = new CallITEntities())
                 {
-                    
+                    var query = (from q in db.news where q.newsType == "" select q).FirstOrDefault();
 
                     result.status = "success";
                 }
