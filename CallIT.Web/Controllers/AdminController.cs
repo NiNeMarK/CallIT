@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace CallIT.Web.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : _BaseController
     {
         // GET: Admin
         public ActionResult Index()
